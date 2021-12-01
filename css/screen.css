@@ -1,0 +1,103 @@
+:root {
+  --square-size: 8;
+}
+
+
+/* UTILITIES - HELPER CLASSES  */
+.flex-row {
+  display: flex;
+}
+.cross-centered {
+  align-items: center;
+}
+.main-centered {
+  justify-content: center;
+}
+
+
+/* COMMONS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #011627;
+  font-size: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 100%;
+}
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+
+/* LAYOUT */
+header {
+  height: 5rem;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 72em;
+  margin: auto;
+}
+
+.logo {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: .5em;
+}
+.logo > img {
+  height: 100%;
+}
+
+.playfield {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 500px;
+  margin: 60px auto;
+  border: 2px solid white;
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / var(--square-size)); /*possiamo cambiare numero square con variabile*/
+  height: calc(100% / var(--square-size));
+  color: white;
+  cursor: pointer;
+  border: 2px solid white;
+}
+.square--even.clicked {
+  background: #2ec4b6;
+}
+.square--odd.clicked {
+  background: #e71d36;
+}
+.square > span {
+  display: none;
+  color: white;
+}
+.square.clicked > span {
+  display: block;
+}
+
